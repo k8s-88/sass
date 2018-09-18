@@ -1,0 +1,38 @@
+@mixin box($size, $background-color) {
+    width: $size;
+    height: $size / 2;
+    background-color: $background-color;
+
+}
+
+.box {
+    @include box(200px, #bada55)
+}
+
+.box2 {
+    @include box(100px, black)
+}
+
+.box3 {
+    @include box(10px, black)
+}
+
+@mixin newbutton($color, $size) {
+    width: $size;
+    height: $size / 2;
+    background-color: $color;
+    border-radius: 5px;
+
+    @if $size < 120 {
+        font-size: 12px;
+    }
+    @else {
+        font-size: $size / 10;
+    }
+}
+
+
+
+.newbutton {
+    @include newbutton (RED, 50px)
+}
